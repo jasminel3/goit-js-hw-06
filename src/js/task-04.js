@@ -1,26 +1,26 @@
-const div = document.querySelector("#counter");
-console.log(div);
-const value = document.querySelector("#value");
-const buttonUp = document.querySelector(
+const counter = document.querySelector("#counter");
+const plusOne = document.querySelector(
   '#counter button[data-action="increment"]'
 );
-const buttonDown = document.querySelector(
+const minusOne = document.querySelector(
   '#counter button[data-action="decrement"]'
 );
+const middleCounter = document.querySelector("#value");
 let counterValue = 0;
+
 function increment() {
   counterValue++;
   updateValue();
 }
+
 function decrement() {
   counterValue--;
   updateValue();
 }
-
 function updateValue() {
-  value.textContent = counterValue;
+  middleCounter.textContent = counterValue;
 }
 
-buttonUp.addEventListener("click", increment);
-buttonDown.addEventListener("click", decrement);
+plusOne.addEventListener("click", increment);
+minusOne.addEventListener("click", decrement);
 updateValue();
